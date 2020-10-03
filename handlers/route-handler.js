@@ -172,29 +172,29 @@ class RouteHandler{
 				});
 			} catch ( error ){
 				response.status(CONSTANTS.SERVER_NOT_ALLOWED_HTTP_CODE).json({
-					error : true,
+					error : error,
 					messages : CONSTANTS.USER_NOT_LOGGED_IN
 				});
 			}
 		}
 	}
 	//
-	async getMessagesRouteHandler(request, response){
+	// async getMessagesRouteHandler(request, response){
 
-			try {
-				const messagesResponse = await queryHandler.getGroupChatList();
-				response.status(CONSTANTS.SERVER_OK_HTTP_CODE).json({
-					error : false,
-					messages : messagesResponse
-				});
-			} catch ( error ){
-				response.status(CONSTANTS.SERVER_NOT_ALLOWED_HTTP_CODE).json({
-					error : true,
-					messages : CONSTANTS.USER_NOT_LOGGED_IN
-				});
-			}
+	// 		try {
+	// 			const messagesResponse = await queryHandler.getGroupChatList();
+	// 			response.status(CONSTANTS.SERVER_OK_HTTP_CODE).json({
+	// 				error : false,
+	// 				messages : messagesResponse
+	// 			});
+	// 		} catch ( error ){
+	// 			response.status(CONSTANTS.SERVER_NOT_ALLOWED_HTTP_CODE).json({
+	// 				error : true,
+	// 				messages : CONSTANTS.USER_NOT_LOGGED_IN
+	// 			});
+	// 		}
 
-	}
+	// }
 
   async getMessagesGroupRouteHandler(request, response){
 		let groupId = request.body.groupId;
